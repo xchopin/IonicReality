@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.wikitude.phonegap.WikitudePlugin"
+    version="6.0.1">
+
+    <name>Augmented Reality - Wikitude SDK Plugin</name>
+    
+    <author>Wikitude GmbH</author>
+    <keywords>AR,augmented reality,Wikitude,image recognition,cloud recognition</keywords>
+
+    <description>
+        The Wikitude PhoneGap Plugin enables developers to embed an augmented reality view into their PhoneGap project. You can create a fully featured app with advanced augmented reality features, including image recognition, purely using HTML, CSS and JavaScript.
+    </description>
+
+    <repo>https://github.com/Wikitude/wikitude-phonegap.git</repo>
+
+    <license>(c) 2016 Wikitude GmbH - see License.md for details of the license</license>
+    
+    
+    <engines>
+      <engine name="cordova" version=">=3.0.0" />
+    </engines>  
+
+    <!-- copy WikitudePlugin wrapper file into www-folder -->
+    <js-module src="www/WikitudePlugin.js" name="WikitudePlugin">
+        <clobbers target="WikitudePlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <!-- declare implementation of WikitudePlugin -->
+        <source-file src="src/android/WikitudePlugin.java" target-dir="src/com/wikitude/phonegap" />
+
+        <!-- copy build extras, necessary for wikitude.aar -->
+        <source-file src="src/android/libs/build-extras.gradle" target-dir="." />
+
+        <!-- add permissions and requirements -->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_GPS" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+            <uses-feature android:name="android.hardware.camera" android:required="true" />
+            <uses-feature android:name="android.hardware.location" android:required="true" />
+            <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+            <uses-feature android:name="android.hardware.sensor.compass" android:required="true" />
+        </config-file>
+        
+        <!-- adds MediaPlayerActivity, required for startVideo feature-->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.wikitude.tools.activities.MediaPlayerActivity" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            </activity>
+        </config-file>
+
+
+        <!-- copy wikitude sdk -->
+        <source-file src="src/android/libs/wikitudesdk.aar" target-dir="libs/" />
+
+
+        <!-- adds WikitudePlugin in project's config.xml -->
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WikitudePlugin">
+                <param name="android-package" value="com.wikitude.phonegap.WikitudePlugin"/>
+            </feature>
+        </config-file>
+
+
+        <!-- visible after installation -->
+        <info>
+            Have fun using world's first AR plugin for PhoneGap. Visit http://www.wikitude.com/developer/documentation/phonegap for detailed documentation for the plugin.
+            
+            Make sure that you enter your Wikitude SDK trial license key in `WikitudePlugin.js` line 12. If you havent bought a license please visit http://www.wikitude.com/store.
+            
+            If you want to contribute to the open source project, please visit us at github, http://github.com/Wikitude
+        </info>
+
+        
+
+    </platform>
+
+    <!-- iOS -->
+    <platform name="ios">
+                
+                
+        <!-- WikitudePlugin Source -->
+        <header-file src="src/ios/WTWikitudePlugin.h" />
+        <source-file src="src/ios/WTWikitudePlugin.m" />
+
+        <header-file src="src/ios/WTARViewController.h" />
+        <source-file src="src/ios/WTARViewController.m" />
+
+        <header-file src="src/ios/WikitudeSDK.h" />
+        <header-file src="src/ios/WTArchitectView.h" />
+        <header-file src="src/ios/WTNavigation.h" />
+        <header-file src="src/ios/WTStartupConfiguration.h" />
+        <header-file src="src/ios/WTArchitectStartupConfiguration.h" />
+        <header-file src="src/ios/WTSDKBuildInformation.h" />
+        <header-file src="src/ios/WTArchitectViewDebugDelegate.h" />
+        <header-file src="src/ios/WTAuthorizationRequestManager.h" />
+        <header-file src="src/ios/WTWikitudeTypes.h" />
+
+        <source-file src="src/ios/libWikitudeSDK.a" framework="true" />
+        <source-file src="src/ios/libWikitudeSDK-simulator.a" framework="true" />
+
+
+        <!-- Additional WikitudePlugin libraries and frameworks -->
+        <framework src="Accelerate.framework" />
+        <framework src="AssetsLibrary.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="CoreMotion.framework" />
+        <framework src="CoreText.framework" />
+        <framework src="CoreVideo.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="MediaPlayer.framework" />
+        <framework src="OpenGLES.framework" />
+        <framework src="Photos.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="SafariServices.framework" />
+        <framework src="Security.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="UIKit.framework" />  
+        <framework src="libc++.dylib" />
+        <framework src="libz.dylib" />
+        
+
+        <!-- Adopts project's config.xml to include the WikitudePlugin and domain white-lists -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="WikitudePlugin">
+                <param name="ios-package" value="WTWikitudePlugin"/>
+            </feature>
+        </config-file>
+        
+
+        <!-- visible after installation -->
+        <info>
+            Have fun using world's first AR plugin for PhoneGap. Visit http://www.wikitude.com/developer/documentation/phonegap for detailed documentation for the plugin.
+            
+            Make sure that you enter your Wikitude SDK trial license key in `WikitudePlugin.js` line 53. If you havent bought a license please visit http://www.wikitude.com/store.
+            
+            If you want to contribute to the open source project, please visit us at github, http://github.com/Wikitude
+        </info>
+        
+    </platform>    
+    
+</plugin>
