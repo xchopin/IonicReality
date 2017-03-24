@@ -9,24 +9,28 @@ var World = {
 	},
 
 	createModelAtLocation: function createModelAtLocationFn() {
-		
-		AR.logger.activateDebugMode();
+
+		//AR.logger.activateDebugMode();
 		AR.logger.info("createModelAtLocation called ...");
-		
+
 		/*
-			First a location where the model should be displayed will be defined. This location will be relativ to the user.	
+			First a location where the model should be displayed will be defined. This location will be relativ to the user.
 		*/
-		var location = new AR.RelativeLocation(null, 5, 0, 2);
+		var location = new AR.RelativeLocation(null, 80, 0, 2);
 
 		/*
 			Next the model object is loaded.
 		*/
-		var modelEarth = new AR.Model("assets/earth.wt3", {
+		var modelEarth = new AR.Model("assets/custom.wt3", {
 			onLoaded: this.worldLoaded,
 			scale: {
 				x: 1,
 				y: 1,
 				z: 1
+			},
+			onClick : function(){
+				//document.location = "architectsdk://button?action=captureScreen";
+				document.getElementById('hp').progress('decrement')
 			}
 		});
 
@@ -49,8 +53,8 @@ var World = {
 
 	/*
 		This sample shows you how to use the function captureScreen to share a snapshot with your friends. C
-		oncept of interaction between JavaScript and native code is same as in the POI Detail page sample but the urlListener now handles picture sharing instead. 
-		The "Snapshot"-button is on top right in the title bar. 
+		oncept of interaction between JavaScript and native code is same as in the POI Detail page sample but the urlListener now handles picture sharing instead.
+		The "Snapshot"-button is on top right in the title bar.
 		Once clicked the current screen is captured and user is prompted to share it (Handling of picture sharing is done in native code and cannot be done in JavaScript)
 	*/
 	captureScreen: function captureScreenFn() {
@@ -65,7 +69,7 @@ var World = {
 	 * This is an example of a function called by IONIC --> WikitudePlugin
 	 */
 	testFunction: function testFunctionFn(message) {
-		alert("testFunction called: "+message);
+		//alert("testFunction called: "+message);
 	},
 
 	worldLoaded: function worldLoadedFn() {

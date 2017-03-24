@@ -9,15 +9,19 @@
 
     <script src="https://www.wikitude.com/libs/architect.js"></script>
     <script type="text/javascript" src="../ade.js"></script>
-
+      <script type="text/javascript" src="js/semantic.min.js"></script>
     <link rel="stylesheet" href="css/default.css">
 </head>
 
-<body onLoad="javascript:AR.logger.activateDebugMode();">
+<body>
 
-    <a href="javascript: World.captureScreen()">Snapshot</a>
+  <a href="javascript: World.captureScreen()"> <button class="ui inverted orange button">Screenshot</button></a>
 
     <div id="loadingMessage" class="info">Loading ...</div>
+    <div class="ui indicating progress active" data-percent="10">
+        <div id="hp" class="bar" style="transition-duration: 300ms; width: 100%;"></div>
+        <div class="label">Health Points</div>
+    </div>
     <script src="js/3dmodelatgeolocation.js"></script>
 </body>
 </html>
