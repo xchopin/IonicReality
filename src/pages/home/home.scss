@@ -1,3 +1,32 @@
 page-home {
-    
+  /* header */
+  .bar.bar-stable {
+      background-color: #7379a3;
+      color: #f4f4f4;
+  }
+  .bar.bar-stable .title {
+      background-color: #7379a3;
+      color: #f4f4f4;
+  }
+
+    .content:first-letter {
+      text-transform: uppercase;
+      font-weight:bold;
+      font-size:1.2em;
+    }
+
+    .image {
+      position: relative;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      position: absolute;
+      top: 24vh;
+      padding-left: 0.7em;
+      left: 0;
+      width: 100%;
+      color:white;
+      font-weight:bold;
+    }
 }
