@@ -35,7 +35,7 @@ var World = {
 
         var indicatorImage = new AR.ImageResource("assets/indi.png");
 
-        var indicatorDrawable = new AR.ImageDrawable(indicatorImage, 0.1, {
+        var indicatorDrawable = new AR.ImageDrawable(indicatorImage, 0.2, {
             verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP
         });
 
@@ -51,17 +51,17 @@ var World = {
 	},
 
   shootAI: function shootAI() {
-	  $('.flash').fadeIn(150, function() {
-	     $(this).fadeOut(150)
-        location = new AR.RelativeLocation(null, 60, 0, 2);
+	  $('.flash').fadeIn(250, function() {
+	     $(this).fadeOut(250)
+        //location = new AR.RelativeLocation(null, 60, 0, 2);
     })
 	  var width = $('#life').width()
     if (width > 200) {
       $('#life').width(width - width/4)
-    }else if (width > 90) {
+    }else if (width > 80) {
       $('#life').width(width - 80)
     }else{
-      $('#life').width(0)
+      $('#life').hidden()
     }
 
   },
