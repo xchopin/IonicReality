@@ -16,7 +16,7 @@ var World = {
 		/*
 			First a location where the model should be displayed will be defined. This location will be relativ to the user.
 		*/
-		var location = new AR.RelativeLocation(null, 80, 0, 2);
+		var location = new AR.RelativeLocation(null, -80, 0, 2);
 
 		/*
 			Next the model object is loaded.
@@ -29,14 +29,13 @@ var World = {
 				z: 1
 			},
 			onClick : function(){
-				//document.location = "architectsdk://button?action=captureScreen";
-				document.getElementById('hp').progress('decrement')
+			  World.shootAI()
 			}
 		});
 
         var indicatorImage = new AR.ImageResource("assets/indi.png");
 
-        var indicatorDrawable = new AR.ImageDrawable(indicatorImage, 0.1, {
+        var indicatorDrawable = new AR.ImageDrawable(indicatorImage, 0.2, {
             verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP
         });
 
@@ -51,6 +50,22 @@ var World = {
         });
 	},
 
+  shootAI: function shootAI() {
+	  $('.flash').fadeIn(250, function() {
+	     $(this).fadeOut(250)
+        //location = new AR.RelativeLocation(null, 60, 0, 2);
+    })
+	  var width = $('#life').width()
+    if (width > 200) {
+      $('#life').width(width - width/4)
+    }else if (width > 80) {
+      $('#life').width(width - 80)
+    }else{
+      $('#life').hidden()
+    }
+
+  },
+
 	/*
 		This sample shows you how to use the function captureScreen to share a snapshot with your friends. C
 		oncept of interaction between JavaScript and native code is same as in the POI Detail page sample but the urlListener now handles picture sharing instead.
@@ -59,8 +74,7 @@ var World = {
 	*/
 	captureScreen: function captureScreenFn() {
 		AR.logger.info("captureScreen called ...");
-
-		if (World.initialized) {
+    if (World.initialized) {
 			document.location = "architectsdk://button?action=captureScreen";
 		}
 	},
@@ -69,6 +83,7 @@ var World = {
 	 * This is an example of a function called by IONIC --> WikitudePlugin
 	 */
 	testFunction: function testFunctionFn(message) {
+
 		//alert("testFunction called: "+message);
 	},
 

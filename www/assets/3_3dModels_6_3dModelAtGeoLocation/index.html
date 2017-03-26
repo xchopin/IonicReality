@@ -9,18 +9,21 @@
 
     <script src="https://www.wikitude.com/libs/architect.js"></script>
     <script type="text/javascript" src="../ade.js"></script>
+    <script src="js/jquery.min.js"></script>
       <script type="text/javascript" src="js/semantic.min.js"></script>
     <link rel="stylesheet" href="css/default.css">
 </head>
 
 <body>
-
+<div class="flash"></div>
   <a href="javascript: World.captureScreen()"> <button class="ui inverted orange button">Screenshot</button></a>
 
     <div id="loadingMessage" class="info">Loading ...</div>
-    <div class="ui indicating progress active" data-percent="10">
-        <div id="hp" class="bar" style="transition-duration: 300ms; width: 100%;"></div>
-        <div class="label">Health Points</div>
+  <div class="ui red indicating progress" style="position:fixed; bottom:2em; width:100%;" id="life">
+    <div class="bar" style="width:100%;"></div>
+    <div class="label" style="color:white;">Health Points</div>
+  </div>
+
     </div>
     <script src="js/3dmodelatgeolocation.js"></script>
 </body>
