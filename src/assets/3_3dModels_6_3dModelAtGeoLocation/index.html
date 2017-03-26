@@ -15,13 +15,16 @@
 </head>
 
 <body>
-  <div class="flash">
-  </div>
-    <a href="javascript: World.captureScreen()">
-      <button class="ui inverted orange button">Screenshot [Developer]</button>
-    </a>
-    <div id="loadingMessage" class="info">Loading ...</div>
-    <script src="js/3dmodelatgeolocation.js"></script>
+<div class="flash"></div>
+  <a href="javascript: World.captureScreen()"> <button class="ui inverted orange button">Screenshot</button></a>
 
+    <div id="loadingMessage" class="info">Loading ...</div>
+  <div class="ui red indicating progress" style="position:fixed; bottom:2em; width:100%;" id="life">
+    <div class="bar" style="width:100%;"></div>
+    <div class="label" style="color:white;">Health Points</div>
+  </div>
+
+    </div>
+    <script src="js/3dmodelatgeolocation.js"></script>
 </body>
 </html>
