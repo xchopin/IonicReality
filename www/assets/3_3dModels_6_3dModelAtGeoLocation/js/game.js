@@ -11,25 +11,37 @@ var World = {
 	createModelAtLocation: function createModelAtLocationFn() {
 
 		//AR.logger.activateDebugMode();
-		AR.logger.info("createModelAtLocation called ...");
+		//AR.logger.info("createModelAtLocation called ...");
 
 		/*
 			First a location where the model should be displayed will be defined. This location will be relativ to the user.
 		*/
-		var location = new AR.RelativeLocation(null, -80, 0, 2);
-
+		var location = new AR.RelativeLocation(null, 50, 0, 4);
+     var canShoot =  true
 		/*
 			Next the model object is loaded.
 		*/
 		var modelEarth = new AR.Model("assets/custom.wt3", {
 			onLoaded: this.worldLoaded,
+
 			scale: {
 				x: 1,
 				y: 1,
 				z: 1
 			},
 			onClick : function(){
-			  World.shootAI()
+				if (canShoot) {
+					if (World.shootAI()) {
+						canShoot=false
+
+						$('#finish')[0].volume = 0
+						$('#finish')[0].play()
+						$('#finish').animate({volume: 1}, 1000)
+
+					  $('#end').fadeIn(1000)
+					  $('#gun').animate({'bottom': '-=1000px' }, 1000)
+				 }
+				}
 			}
 		});
 
@@ -51,18 +63,38 @@ var World = {
 	},
 
   shootAI: function shootAI() {
+	  var sfxShooter = $('#shoot')[0]
+    if (sfxShooter.currentTime != 0) {
+      sfxShooter.pause()
+      sfxShooter.currentTime = 0
+	  }
+    sfxShooter.play()
+
+    $('#gun').animate({'right': '-=50px' }, 150)
 	  $('.flash').fadeIn(250, function() {
+	     $('#gun').animate({'right': '+=50px' }, 'fast')
 	     $(this).fadeOut(250)
-        //location = new AR.RelativeLocation(null, 60, 0, 2);
     })
+
 	  var width = $('#life').width()
     if (width > 200) {
-      $('#life').width(width - width/4)
-    }else if (width > 80) {
-      $('#life').width(width - 80)
-    }else{
-      $('#life').hidden()
-    }
+      $('#life').width(width  - width/10)
+    }else if (width > 60) {
+			if ($('#life').width(width - width/8) > 0) {
+				$('#life').width(width - width/8)
+			} else {
+			 	$('.hud').hide()
+				return true
+			}
+  }else{
+		if ($('#life').width(width - width/3) > 0) {
+			$('#life').width(width - width/3)
+		} else {
+			$('.hud').hide()
+			return true
+		}
+	}
+	return false
 
   },
 
