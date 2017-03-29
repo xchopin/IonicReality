@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="org.xchopin.xaviersapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Xavier's App</name>
-  <description>An awesome Ionic/Cordova app.</description>
+  <description>Do you need a description with this title?</description>
   <author email="bonjour@xavierchop.in" href="https://xavierchop.in">Xavier Chopin</author>
   <content src="index.html"/>
   <access origin="*"/>
