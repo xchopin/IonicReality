@@ -1,20 +1,41 @@
-Ionic 2 App Base
+IonicReality
 =====================
 
-This is the base template for Ionic 2 starter apps.
+This is an Ionic example application using Augmented Reality through the Wikitude Plugin (Mini-Shooter Game)
 
-## Using this project
+# Using this project
 
-You'll need the Ionic CLI with support for v2 apps:
+*You need the Ionic CLI with support for v2 apps*
 
-```bash
-$ npm install -g ionic
-```
-
-Then run:
+### 1. Clone the repository
 
 ```bash
-$ ionic start myApp
+$ git clone https://github.com/xchopin/IonicReality
 ```
 
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page.
+### 2. Add iOS platform
+
+```bash
+$ ionic platform add ios
+```
+### 3. Build iOS
+
+```bash
+$ ionic build ios
+```
+### 4. Add the App-Info.plist settings file to the fresh XCode Project
+
+```bash
+$ cd IonicReality
+$ cp Xavier\'s\ App-Info.plist platforms/ios/Xavier\'s\ App
+```
+
+### 5. Add your Team on XCode
+
+### 6. Compile the iOS application
+
+# Author
+
+Xavier CHOPIN
+
+
