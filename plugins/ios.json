@@ -8,25 +8,25 @@
     },
     "installed_plugins": {
         "com.wikitude.phonegap.WikitudePlugin": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "org.xchopin.xaviersapp"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "org.xchopin.xaviersapp"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "org.xchopin.xaviersapp"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "org.xchopin.xaviersapp"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "org.xchopin.xaviersapp"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "org.xchopin.xaviersapp"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "org.xchopin.xaviersapp"
         }
     },
     "dependent_plugins": {}
