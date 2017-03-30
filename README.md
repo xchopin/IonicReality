@@ -8,14 +8,16 @@ This is an Ionic example application using Augmented Reality through the Wikitud
  - 3D Touch
  - Augmented Reality
 
+# Requirements
+
+- iOS 8.0+
+- Xcode 8.0+
+
+
 # Using this project
 
 *You need the Ionic CLI with support for v2 apps*
 
-# Requirements
-
-iOS 8.0+
-Xcode 8.0+
 
 
 ### 1. Clone the repository
@@ -35,9 +37,13 @@ $ cd IonicReality
 $ ionic build ios
 ```
 
-### 4. Add your team on XCode
+### 4. Go to the XCode project
+```bash
+$ cd platforms/ios
+```
+### 5. Add your team on XCode
 
-### 5. Compile and run the iOS application from XCode
+### 6. Compile and run the iOS application from XCode
 
 # Author
 Xavier CHOPIN
