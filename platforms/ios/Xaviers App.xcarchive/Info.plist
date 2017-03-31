@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationProperties</key>
+	<dict>
+		<key>ApplicationPath</key>
+		<string>Applications/Xaviers App.app</string>
+		<key>CFBundleIdentifier</key>
+		<string>org.xchopin.xaviersapp</string>
+		<key>CFBundleShortVersionString</key>
+		<string>0.0.1</string>
+		<key>CFBundleVersion</key>
+		<string>0.0.1</string>
+		<key>SigningIdentity</key>
+		<string>iPhone Developer: x.chopin54@gmail.com (5EHJB6J9L9)</string>
+	</dict>
+	<key>ArchiveVersion</key>
+	<integer>2</integer>
+	<key>CreationDate</key>
+	<date>2017-03-30T21:32:51Z</date>
+	<key>Name</key>
+	<string>Xaviers App</string>
+	<key>SchemeName</key>
+	<string>Xaviers App</string>
+</dict>
+</plist>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  <title>Xavier's Game</title>
+  <script src="https://www.wikitude.com/libs/architect.js"></script>
+  <script type="text/javascript" src="../ade.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/semantic.min.js"></script>
+  <link rel="stylesheet" href="css/default.css">
+</head>
+
+<body>
+  <div id="end">YOU WIN!</div>
+  <div class="flash"></div>
+  <a href="javascript: World.captureScreen()"> <button class="ui inverted orange button">Screenshot</button></a>
+  <div id="loadingMessage" class="info">Loading ...</div>
+  <div class="hud">
+    <div class="ui red indicating progress" style="width:100%;" id="life">
+      <div class="bar" style="width:100%;"></div>
+      <div class="label" style="color:white;">Health Points</div>
+    </div>
+  </div>
+
+  <img src="assets/gun.png" id="gun" class="gun" alt="gun"/>
+
+  <div class="hidden">
+    <audio id="shoot" src="assets/audio/sfx_shoot.mp3"></audio>
+    <audio id="finish" src="assets/audio/sfx_finish.mp3"></audio>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>

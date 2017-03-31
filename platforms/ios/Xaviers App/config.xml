@@ -36,9 +36,10 @@
         <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
     <name>Xaviers App</name>
-    <description>Do you really need a description with this name?</description>
+    <description>Do you need a description with this title?</description>
     <author email="bonjour@xavierchop.in" href="https://xavierchop.in">Xavier Chopin</author>
     <content src="index.html" />
+    <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-navigation href="*://*.youtube.com/*" />
     <allow-intent href="http://*/*" />
