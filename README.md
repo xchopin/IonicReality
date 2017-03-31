@@ -40,4 +40,4 @@ $ cd IonicReality/platforms/ios
 Xavier CHOPIN
 
 # License
-The IonicReality is open-sourced software licensed under the MIT license.
+The IonicReality application is open-sourced software licensed under the MIT license.
