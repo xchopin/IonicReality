@@ -1,6 +1,2 @@
 npm-debug.log*
-node_modules/
-platforms/*
-!platforms/.gitkeep
-plugins/
 .idea/
