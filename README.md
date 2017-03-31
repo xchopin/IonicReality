@@ -4,7 +4,7 @@ ionic reality
 This is an Ionic example application using Augmented Reality through the Wikitude Plugin (Mini-Shooter Game)
 
 # Features
- - Tabs 
+ - Tabs
  - 3D Touch
  - Augmented Reality
 
@@ -26,28 +26,18 @@ This is an Ionic example application using Augmented Reality through the Wikitud
 $ git clone https://github.com/xchopin/IonicReality
 ```
 
-### 2. Go to the directory and install dependencies
+### 3. Go to the XCode project
 
 ```bash
-$ cd IonicReality
-```
-### 3. Build iOS platform
-
-```bash
-$ ionic build ios
+$ cd IonicReality/platforms/ios
 ```
 
-### 4. Go to the XCode project
-```bash
-$ cd platforms/ios
-```
-### 5. Add your team on XCode
+### 4. Add your team on XCode
 
-### 6. Compile and run the iOS application from XCode
+### 5. Compile and run the iOS application from XCode
 
 # Author
 Xavier CHOPIN
 
 # License
 The IonicReality is open-sourced software licensed under the MIT license.
-
