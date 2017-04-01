@@ -32,15 +32,20 @@ $ cd IonicReality/
 $ npm install
 ```
 
-### 3. Go to the XCode project
+### 3. Build iOS project
+```bash
+$ ionic build ios
+```
 
+### 4. Go to the XCode project
 ```bash
 $ cd platforms/ios/
 ```
+Open `Xaviers App.xcodeproj`
 
-### 4. Add your team on XCode
+### 5. Add your team on XCode
 
-### 5. Compile and run the iOS application from XCode
+### 6. Compile and run the iOS application from XCode
 
 # Author
 Xavier CHOPIN
