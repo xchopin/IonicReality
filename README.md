@@ -3,6 +3,11 @@ ionic reality
 
 This is an Ionic example application using Augmented Reality through the Wikitude Plugin (Mini-Shooter Game)
 
+
+<p align="center">
+ <img src="preview.jpg" alt="preview" height="60%;">
+</p>
+
 # Features
  - Tabs
  - 3D Touch
