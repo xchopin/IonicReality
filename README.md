@@ -7,17 +7,17 @@ This is an Ionic example application using Augmented Reality through the Wikitud
  - Tabs
  - 3D Touch
  - Augmented Reality
+ - Local video with subtitles
+ - YouTube video (iFrame)
 
 # Requirements
 
 - iOS 8.0+
 - Xcode 8.0+
 
-
 # Using this project
 
 *You need the Ionic CLI with support for v2 apps*
-
 
 
 ### 1. Clone the repository
@@ -26,15 +26,21 @@ This is an Ionic example application using Augmented Reality through the Wikitud
 $ git clone https://github.com/xchopin/IonicReality
 ```
 
-### 2. Go to the XCode project
-
+### 2. Install dependencies
 ```bash
-$ cd IonicReality/platforms/ios
+$ cd IonicReality/
+$ npm install
 ```
 
-### 3. Add your team on XCode
+### 3. Go to the XCode project
 
-### 4. Compile and run the iOS application from XCode
+```bash
+$ cd platforms/ios/
+```
+
+### 4. Add your team on XCode
+
+### 5. Compile and run the iOS application from XCode
 
 # Author
 Xavier CHOPIN
