@@ -26,18 +26,18 @@ This is an Ionic example application using Augmented Reality through the Wikitud
 $ git clone https://github.com/xchopin/IonicReality
 ```
 
-### 3. Go to the XCode project
+### 2. Go to the XCode project
 
 ```bash
 $ cd IonicReality/platforms/ios
 ```
 
-### 4. Add your team on XCode
+### 3. Add your team on XCode
 
-### 5. Compile and run the iOS application from XCode
+### 4. Compile and run the iOS application from XCode
 
 # Author
 Xavier CHOPIN
 
 # License
-The IonicReality is open-sourced software licensed under the MIT license.
+The IonicReality application is open-sourced software licensed under the MIT license.
